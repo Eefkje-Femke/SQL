@@ -24,18 +24,21 @@
         //werkende tabel
         // $sql = "SELECT voetballers.Voornaam, voetballers.Achternaam , elftallen.Elftalcode, elftallen.Omschrijving FROM  voetballers INNER JOIN elftallen ON voetballers.Elftalcode = elftallen.Elftalcode";
 
+        //wie speelt er op welke dag?
+        // $sql = "SELECT voetballers.Voornaam, voetballers.Achternaam , elftallen.Elftalcode FROM  voetballers INNER JOIN elftallen ON voetballers.Elftalcode = elftallen.Elftalcode WHERE elftallen.Omschrijving = 'Zaterdag'";
 
-        $sql = "SELECT voetballers.Voornaam, voetballers.Achternaam , elftallen.Elftalcode FROM  voetballers INNER JOIN elftallen ON voetballers.Elftalcode = elftallen.Elftalcode WHERE elftallen.Omschrijving = 'Zaterdag'";
+        //Contributie betaling
+        $sql = "SELECT Voornaam, Achternaam , Contributie, ContributieDatum FROM  voetballers WHERE Contributie = 'nee'";
 
         $result= $conn->query($sql);
 
         //tabel opvragen
         if ($result->num_rows > 0) {
           echo "<table>";
-          echo "<th>Voornaam</th>". "<th>Achternaam</th>". "<th>Elftalcode</th>";
+          echo "<th>Voornaam</th>". "<th>Achternaam</th>". "<th>Contributie</th>". "<th>Contributie Datum Voldaan</th>";
           while ($row = $result->fetch_assoc()) {
             echo "<tr>";
-            echo "<td>". $row["Voornaam"]."</td><td>". $row["Achternaam"]."</td><td>". $row["Elftalcode"] ."</td>";
+            echo "<td>". $row["Voornaam"]."</td><td>". $row["Achternaam"]."</td><td>". $row["Contributie"] ."</td><td>". $row["ContributieDatum"] ."</td>";
             echo "</tr>";
           }
           echo "</table>";
