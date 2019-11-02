@@ -1,0 +1,10 @@
+[
+{"type":"header","version":"4.7.4","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"voetbal"},
+{"type":"table","name":"voetballers","database":"voetbal","data":
+[
+{"Voornaam":"Niek","Achternaam":"de Bruijn","Elftalcode":"9"},
+{"Voornaam":"Hans","Achternaam":"Martens","Elftalcode":"9"}
+]
+}
+]
